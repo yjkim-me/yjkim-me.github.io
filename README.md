@@ -11,7 +11,7 @@ The homepage presents Yeon-Jae Kim's research, academic background, and contact 
 - Latest Research cards for VA-Assembly and the KSPE Spring presentation, with its presentation award marked by a star
 - Contact details
 
-Detailed experience, patents, skills, and the full publication/presentation list remain in `assets/CV_Yeonjae_Kim.pdf`.
+Detailed experience, patents, skills, and the full publication/presentation list remain in `assets/CV_Yeonjae_Kim_public.pdf`.
 
 ## Files
 
@@ -24,7 +24,7 @@ Detailed experience, patents, skills, and the full publication/presentation list
 - `images/design_automation_framework.svg` — KSPE presentation framework thumbnail
 - `design-framework.html` — responsive viewer for the design automation framework
 - `images/motion-concept.svg` — explanatory trajectory schematic, labeled as a concept rather than an experimental result
-- `assets/CV_Yeonjae_Kim.pdf` — current CV
+- `assets/CV_Yeonjae_Kim_public.pdf` — current CV
 
 ## Preview and publish
 

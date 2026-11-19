@@ -131,7 +131,7 @@ nav a:hover { color: var(--link); }
 .section-label h2 { font-size: clamp(1.875rem, 3vw, 2.125rem); }
 .section-label > p { font-size: .875rem; color: var(--muted); margin-top: 15px; line-height: 1.6; }
 .section-content { min-width: 0; }
-.publication h3 { font-size: 1.3125rem; line-height: 1.45; margin-bottom: 12px; }
+.publication h3 { max-width: 52ch; font-size: 1.625rem; font-weight: 600; line-height: 1.35; letter-spacing: -.025em; text-wrap: balance; margin-bottom: 16px; }
 .publication h3 a { color: var(--ink); }
 .publication h3 a:hover { color: var(--link); }
 .section-grid.publications-layout, .section-grid.research-section { grid-template-columns: minmax(0,1fr); gap: 30px; }
@@ -144,7 +144,7 @@ nav a:hover { color: var(--link); }
 .publication-header { min-width: 0; }
 .publication-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 20px; }
 .publication-meta .venue { margin: 0; }
-.research-type { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; color: var(--muted); font-size: .875rem; font-weight: 600; line-height: 1.5; letter-spacing: .025em; }
+.research-type { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; color: var(--muted); font-size: .875rem; font-weight: 400; line-height: 1.5; letter-spacing: .08em; text-transform: uppercase; }
 .conference-thumbnail { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 230px; color: var(--ink); font-family: var(--serif); font-size: 2.5rem; line-height: 1.2; }
 .conference-thumbnail a { color: var(--ink); }
 .conference-thumbnail a:hover { color: var(--link); text-decoration: none; }
@@ -159,10 +159,10 @@ nav a:hover { color: var(--link); }
 .research-thumbnail { min-width: 0; margin: 0; }
 .research-thumbnail img { display: block; width: 100%; height: auto; max-height: 230px; object-fit: contain; border-radius: 4px; }
 .research-thumbnail figcaption { color: var(--muted); font-size: .875rem; text-align: center; margin-top: 9px; }
-.authors { color: var(--ink); font-size: 1.125rem; font-weight: 400; margin-bottom: 9px; line-height: 1.65; }
-.venue { color: var(--ink); font-size: 1.0625rem; font-weight: 400; line-height: 1.65; }
+.authors { color: var(--body); font-size: 1.125rem; font-weight: 400; margin-bottom: 6px; line-height: 1.6; }
+.venue { color: var(--body); font-size: 1.0625rem; font-weight: 400; line-height: 1.6; }
 .paper-summary { font-size: 1.0625rem; margin: 12px 0; line-height: 1.65; }
-.paper-pill { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 40px; padding: 8px 16px; border: 1px solid transparent; border-radius: 999px; background: var(--pill-bg); color: var(--pill-ink); font-size: .9375rem; line-height: 1.5; font-weight: 600; transition: background-color .18s ease, border-color .18s ease; }
+.paper-pill { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 40px; padding: 8px 16px; border: 1px solid var(--button-border); border-radius: 999px; background: var(--pill-bg); color: var(--pill-ink); font-size: .9375rem; line-height: 1.5; font-weight: 600; transition: background-color .18s ease, border-color .18s ease; }
 .paper-pill svg { flex-shrink: 0; }
 .paper-pill:hover { background: var(--pill-hover); border-color: var(--button-border); text-decoration: none; }
 .paper-pill:active { background: var(--pill-hover); border-color: var(--pill-ink); }
@@ -231,7 +231,8 @@ footer { border-top: 1px solid var(--subtle-line); }
   .bio-copy > p { font-size: 1.0625rem; }
   .bio-facts { grid-template-columns: 1fr; gap: 24px; padding-left: 12px; }
   .research-thumbnail { width: 100%; margin: 0; }
-  .publication h3, .current-project h3 { font-size: 1.25rem; }
+  .publication h3 { font-size: 1.375rem; line-height: 1.4; text-wrap: pretty; margin-bottom: 14px; }
+  .current-project h3 { font-size: 1.25rem; }
   .research-thumbnail figcaption { margin-top: 7px; }
   .contact-email { font-size: 1.375rem; }
   .footer-shell { flex-wrap: wrap; gap: 12px; font-size: .8125rem; }
