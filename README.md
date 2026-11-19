@@ -4,11 +4,11 @@ A concise academic homepage for GitHub Pages. Plain HTML, CSS, and a small theme
 
 ## Structure
 
-The layout takes inspiration from the profile/biography introduction and clearly separated publication sections at https://adamwei.com/, with an original white theme and content based on the current CV.
+The homepage presents Yeon-Jae Kim's research, academic background, and contact information in a responsive layout with light and dark themes.
 
 - Profile beside a short biography, interests, and two-line academic history
+- Ongoing Research for current work and future directions
 - Latest Research cards for VA-Assembly and the KSPE Spring presentation, with its presentation award marked by a star
-- Ongoing Research appears before Latest Research, with current work and future directions
 - Contact details
 
 Detailed experience, patents, skills, and the full publication/presentation list remain in `assets/CV_Yeonjae_Kim.pdf`.
@@ -21,6 +21,8 @@ Detailed experience, patents, skills, and the full publication/presentation list
 - `images/profile.jpg` — profile photograph
 - `images/assembly_framework.svg` — supplied VA-Assembly paper framework, shown as a card thumbnail
 - `framework.html` — responsive, screen-fitting framework viewer
+- `images/design_automation_framework.svg` — KSPE presentation framework thumbnail
+- `design-framework.html` — responsive viewer for the design automation framework
 - `images/motion-concept.svg` — explanatory trajectory schematic, labeled as a concept rather than an experimental result
 - `assets/CV_Yeonjae_Kim.pdf` — current CV
 
