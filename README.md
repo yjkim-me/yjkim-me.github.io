@@ -1,44 +1,35 @@
-# Yeon-Jae Kim — Personal Research Website v5
+# Yeon-Jae Kim — Research Homepage
 
-This version is profile-first and is structured like a modern robotics/AI researcher homepage.
-
-## Profile image
-
-Put your photo here:
-
-```text
-images/profile.jpg
-```
-
-Recommended:
-- portrait crop
-- around 4:5 aspect ratio
-- 800 px or larger
-- leave a little space around the head and shoulders
-
-The site displays it at approximately 240 × 280 px on desktop.
+A concise academic homepage for GitHub Pages. Plain HTML, CSS, and a small theme script; no build step or external dependencies.
 
 ## Structure
 
-1. Profile / research identity
-2. Three core research directions
-3. Selected current work
-4. Research philosophy / background
-5. Contact
+The layout takes inspiration from the profile/biography introduction and clearly separated publication sections at https://adamwei.com/, with an original white theme and content based on the current CV.
 
-## Deploy
+- Profile beside a short biography, interests, and two-line academic history
+- Latest Research cards for VA-Assembly and the KSPE Spring presentation, with its presentation award marked by a star
+- Ongoing Research appears before Latest Research, with current work and future directions
+- Contact details
 
-```powershell
-git add .
-git commit -m "Redesign homepage with profile-first research layout"
-git push
-```
+Detailed experience, patents, skills, and the full publication/presentation list remain in `assets/CV_Yeonjae_Kim.pdf`.
 
+## Files
 
-## v6 typography refinements
+- `index.html` — page content
+- `style.css` — responsive layout, typography, and light/dark palettes
+- `theme.js` — system theme detection and a persistent manual theme toggle
+- `images/profile.jpg` — profile photograph
+- `images/assembly_framework.svg` — supplied VA-Assembly paper framework, shown as a card thumbnail
+- `framework.html` — responsive, screen-fitting framework viewer
+- `images/motion-concept.svg` — explanatory trajectory schematic, labeled as a concept rather than an experimental result
+- `assets/CV_Yeonjae_Kim.pdf` — current CV
 
-- Profile image reduced to ~185 × 215 px on desktop
-- More restrained name and section-heading sizes
-- Tighter, more consistent body/intro scale
-- Slightly smaller cards and visual panels
-- Reduced section spacing for a calmer academic layout
+## Preview and publish
+
+Open `index.html` directly, or run `python -m http.server 8000` from this folder. Publish through the existing GitHub Pages branch; no build step is needed.
+
+Keep research status accurate when updating the page. The VA-Assembly section uses the supplied paper framework. The ongoing trajectory research still uses a labeled concept illustration.
+
+## Appearance
+
+The page follows the system color scheme until a visitor chooses Light mode or Dark mode in the header. This preference is stored locally in the browser. If storage is unavailable, the toggle still works for the current page. With JavaScript disabled, the system color scheme is used and the toggle is hidden.
