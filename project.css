@@ -1,0 +1,34 @@
+.project-shell { width: min(calc(100% - 88px), 1040px); margin-inline: auto; }
+.project-hero { padding-block: 48px 32px; }
+.project-back { display: inline-block; margin-bottom: 32px; font-size: .9375rem; }
+.project-hero h1 { max-width: 980px; margin-bottom: 22px; font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.15; }
+.project-hero .authors { margin-bottom: 12px; }
+.project-lead { max-width: 760px; margin-top: 24px; font-size: 1.1875rem; line-height: 1.7; }
+.project-toc { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 8px 28px; padding-block: 16px; border-block: 1px solid var(--line); font-size: .9375rem; }
+.project-toc a { display: inline-flex; align-items: center; min-height: 32px; }
+.project-section { padding-block: 40px; border-bottom: 1px solid var(--line); }
+.project-section h2 { margin-bottom: 22px; font-size: 2rem; }
+.project-section > p { max-width: 780px; }
+.project-section > p + p { margin-top: 16px; }
+.project-figure { margin-top: 26px; }
+.project-figure figcaption { margin-top: 12px; color: var(--muted); font-size: .9375rem; line-height: 1.6; }
+.project-steps { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin: 26px 0 0; padding: 0; counter-reset: step; }
+.project-steps li { padding: 20px; background: var(--band); border: 1px solid var(--line); border-radius: 8px; counter-increment: step; }
+.project-steps li::before { content: "0" counter(step); display: block; color: var(--link); font-size: .875rem; margin-bottom: 12px; }
+.project-steps h3 { font-size: 1.125rem; margin-bottom: 8px; }
+.project-steps p { font-size: 1rem; line-height: 1.65; }
+.project-resources { display: flex; flex-wrap: wrap; gap: 12px; }
+.project-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; padding-block: 30px 48px; font-size: 1rem; }
+.spotlight-intro { margin-top: 16px; max-width: 800px; font-size: 1.0625rem; line-height: 1.7; }
+.publication-actions { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+.project-link { white-space: nowrap; }
+@media(max-width: 700px) { .project-steps { grid-template-columns: minmax(0, 1fr); gap: 12px; } }
+@media(max-width: 600px) {
+  .project-shell { width: calc(100% - 40px); }
+  .project-hero { padding-block: 28px; }
+  .project-back { margin-bottom: 24px; }
+  .project-toc { width: 100%; gap: 8px 20px; }
+  .project-section { padding-block: 30px; }
+  .project-section h2 { font-size: 1.75rem; }
+  .project-lead { font-size: 1.0625rem; }
+}

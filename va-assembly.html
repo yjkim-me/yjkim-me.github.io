@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Training-free 3D part assembly using view-aligned diffusion guidance to optimize part translation, rotation, and scale." />
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="canonical" href="https://yjkim-me.github.io/va-assembly.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="VA-Assembly: View-Aligned Score Guidance for Training-Free 3D Part Assembly" />
+  <meta property="og:description" content="Training-free 3D part assembly using view-aligned diffusion guidance to optimize part translation, rotation, and scale." />
+  <meta property="og:url" content="https://yjkim-me.github.io/va-assembly.html" />
+  <title>VA-Assembly: View-Aligned Score Guidance for Training-Free 3D Part Assembly | Yeon-Jae Kim</title>
+  <script src="theme.js?v=20261119"></script>
+  <link rel="stylesheet" href="style.css?v=20261120-1" />
+  <link rel="stylesheet" href="project.css?v=20261119-2" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="nav-shell"><a class="site-name" href="index.html#about">Yeon-Jae Kim</a><div class="nav-controls"><nav aria-label="Primary navigation"><a href="index.html#about">Home</a><a href="index.html#research">Ongoing</a><a href="index.html#publications">Research</a><a href="index.html#contact">Contact</a></nav><button class="theme-toggle" type="button" aria-label="Switch to dark mode" hidden>
+    <svg class="theme-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20.5 13A8.5 8.5 0 0 1 11 3.5 8.5 8.5 0 1 0 20.5 13Z" /></svg>
+    <svg class="theme-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5" /></svg>
+  </button></div></div></header>
+  <main class="project-shell" id="main">
+    <header class="project-hero">
+      <a class="project-back" href="index.html#featured-research">← Back to Spotlight</a>
+      <p class="research-type">Preprint</p>
+      <h1>VA-Assembly: View-Aligned Score Guidance for Training-Free 3D Part Assembly</h1>
+      <p class="authors"><strong>Yeon-Jae Kim</strong>, Sangwon Kang, Byung-Kwon Min</p>
+      <div class="publication-meta"><p class="venue">International Journal of Computer Vision · Under review (submitted June 2026)</p></div>
+      <p class="project-lead">Training-free 3D part assembly using view-aligned diffusion guidance to optimize part translation, rotation, and scale.</p>
+    </header>
+    <nav class="project-toc" aria-label="Project sections">
+      <a href="#overview">Overview</a><a href="#key-idea">Key idea</a><a href="#method">Method</a><a href="#resources">Resources</a>
+    </nav>
+    <section class="project-section" id="overview" aria-labelledby="overview-title">
+      <h2 id="overview-title">Overview</h2>
+      <p>VA-Assembly studies how separately prepared 3D parts can be arranged into a compositional object using a reference image. The method optimizes each part’s translation, rotation, and scale without task-specific model training.</p>
+    </section>
+    <section class="project-section" id="key-idea" aria-labelledby="key-idea-title">
+      <h2 id="key-idea-title">Key idea</h2>
+      <p>Use view-aligned diffusion guidance to connect the appearance of a rendered assembly with the arrangement of its 3D parts.</p>
+      <!-- Add a dedicated concept figure here when available, with descriptive alt text and a caption. -->
+      <ol class="project-steps">
+        <li><h3>Prepare parts</h3><p>Build the 3D assets from part images associated with the reference object.</p></li>
+        <li><h3>Render the assembly</h3><p>Render the current part arrangement to provide a visual representation for guidance.</p></li>
+        <li><h3>Refine transformations</h3><p>Use view-aligned score guidance to optimize part positions, orientations, and scales.</p></li>
+      </ol>
+    </section>
+    <section class="project-section" id="method" aria-labelledby="method-title">
+      <h2 id="method-title">Method</h2>
+      <p>The framework connects 3D asset preparation with iterative transformation optimization. The diagram shows the reference input, part representations, rendering, and diffusion-guided update process.</p>
+      <figure class="project-figure">
+        <a class="framework-link" href="framework.html" target="_blank" rel="noopener noreferrer" aria-label="Open the VA-Assembly framework viewer"><img src="images/assembly_framework.svg" alt="VA-Assembly pipeline showing 3D asset preparation and view-aligned score-guided transformation optimization." width="4257" height="1402" loading="lazy" /></a>
+        <figcaption>VA-Assembly framework. Select the diagram to open the larger viewer.</figcaption>
+      </figure>
+      <!-- Expand this section with equations and method details when ready. -->
+    </section>
+    <!-- Results: remove hidden after adding real result images, videos, or evaluation data.
+         Add a corresponding link to #results in the project navigation when ready. -->
+    <section class="project-section" id="results" aria-labelledby="results-title" hidden>
+      <h2 id="results-title">Results</h2>
+      <!-- Add verified qualitative examples and quantitative results here. -->
+    </section>
+
+    <section class="project-section" id="resources" aria-labelledby="resources-title">
+      <h2 id="resources-title">Resources</h2>
+      <div class="project-resources"><a class="paper-pill arxiv-pill" href="https://arxiv.org/abs/2611.20788" target="_blank" rel="noopener noreferrer">Read on arXiv ↗</a><a class="paper-pill" href="framework.html" target="_blank" rel="noopener noreferrer">View framework ↗</a></div>
+    </section>
+    <div class="project-bottom"><a href="index.html#featured-research">← Back to Spotlight</a><a href="design-automation.html">Explore design automation →</a></div>
+  </main>
+  <footer><div class="footer-shell"><span>© 2026 Yeon-Jae Kim</span><a href="mailto:yeonjaekim@yonsei.ac.kr">Contact</a></div></footer>
+</body>
+</html>

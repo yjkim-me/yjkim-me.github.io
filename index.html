@@ -5,9 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Yeon-Jae Kim, Research Associate at Yonsei University, Republic of Korea. Research in robotic assembly, 3D geometric reasoning, and diffusion-guided trajectory optimization." />
   <meta name="theme-color" content="#ffffff" />
+  <link rel="canonical" href="https://yjkim-me.github.io/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Yeon-Jae Kim | Robotics &amp; Generative Intelligence" />
+  <meta property="og:description" content="Research Associate at Yonsei University, Republic of Korea. Robotic assembly, 3D geometric reasoning, and diffusion-guided trajectory optimization." />
+  <meta property="og:url" content="https://yjkim-me.github.io/" />
   <title>Yeon-Jae Kim | Robotics &amp; Generative Intelligence</title>
   <script src="theme.js?v=20261119"></script>
-  <link rel="stylesheet" href="style.css?v=20261119-8" />
+  <link rel="stylesheet" href="style.css?v=20261120-1" />
+  <link rel="stylesheet" href="project.css?v=20261119-2" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -23,11 +29,11 @@
       <header class="identity">
           <h1 id="profile-name">Yeon-Jae Kim</h1>
           <p class="profile-role">Research Associate</p>
-          <p class="affiliation">Manufacturing &amp; Mechatronics Lab · Yonsei University, Republic of Korea</p>
+          <p class="affiliation"><span>Manufacturing &amp; Mechatronics Lab</span><span>Yonsei University, Republic of Korea</span></p>
           <div class="profile-links"><a href="mailto:yeonjaekim@yonsei.ac.kr">Email</a><a href="assets/CV_Yeonjae_Kim_public.pdf" target="_blank" rel="noopener noreferrer">CV</a></div>
       </header>
       <div class="bio-copy">
-        <p>I am a Research Associate in the <a href="https://minlab.yonsei.ac.kr/" target="_blank" rel="noopener noreferrer">Manufacturing &amp; Mechatronics Lab</a> at Yonsei University, Republic of Korea, advised by <a href="https://scholar.google.com/citations?user=25VFaycAAAAJ&amp;hl=ko&amp;oi=ao" target="_blank" rel="noopener noreferrer">Prof. Byung-Kwon Min</a>. I recently received my M.S. in Mechanical Engineering from Yonsei in 2026.</p>
+        <p>I am a Research Associate in the <a href="https://minlab.yonsei.ac.kr/" target="_blank" rel="noopener noreferrer">Manufacturing &amp; Mechatronics Lab</a> at Yonsei University, Republic of Korea, advised by <a href="https://scholar.google.com/citations?user=25VFaycAAAAJ&amp;hl=ko&amp;oi=ao" target="_blank" rel="noopener noreferrer">Prof. Byung-Kwon Min</a>. I recently received my M.S. in Mechanical Engineering from Yonsei University in September 2026.</p>
         <p>My research focuses on <strong>learning-enabled robotic assembly and manipulation</strong>. I study how 3D geometric reasoning and generative models can help determine how parts fit together and how a robot should move. My current work explores diffusion-guided joint optimization of robot paths and timing.</p>
         </div>
         <div class="bio-facts">
@@ -45,17 +51,31 @@
     </section>
 
     <section class="section-band" id="publications" aria-labelledby="publications-title"><div class="section-shell section-grid publications-layout">
-      <div class="section-label"><h2 id="publications-title">Latest Research</h2></div>
+      <div class="section-label research-heading">
+        <h2 id="publications-title">Research</h2>
+        <nav class="research-jumps" aria-label="Research sections">
+          <a href="#featured-research">Spotlight</a>
+          <a href="#manuscripts-title">Manuscripts</a>
+          <a href="#conferences-title">Conferences</a>
+          <a href="#patents-title">Patents</a>
+        </nav>
+      </div>
       <div class="section-content">
+        <section class="featured-research-section" aria-labelledby="featured-research">
+        <h3 class="research-section-heading" id="featured-research">Spotlight</h3>
         <article class="publication featured-paper research-card">
           <header class="publication-header">
             <p class="research-type">Preprint</p>
-            <h3><a href="https://arxiv.org/abs/2611.20788" target="_blank" rel="noopener noreferrer">VA-Assembly: View-Aligned Score Guidance for Training-Free 3D Part Assembly</a></h3>
+            <h4><a href="va-assembly.html">VA-Assembly: View-Aligned Score Guidance for Training-Free 3D Part Assembly</a></h4>
             <p class="authors"><strong>Yeon-Jae Kim</strong>, Sangwon Kang, Byung-Kwon Min</p>
             <div class="publication-meta">
-              <p class="venue">International Journal of Computer Vision · Under review, 2026</p>
-              <a class="paper-pill" href="https://arxiv.org/abs/2611.20788" target="_blank" rel="noopener noreferrer" aria-label="Read the VA-Assembly preprint on arXiv">arXiv<svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 12 12 4M4 4h8v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg></a>
+              <p class="venue">International Journal of Computer Vision · Under review (submitted June 2026)</p>
+              <div class="publication-actions">
+                <a class="paper-pill arxiv-pill" href="https://arxiv.org/abs/2611.20788" target="_blank" rel="noopener noreferrer" aria-label="Read the VA-Assembly preprint on arXiv">arXiv<svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 12 12 4M4 4h8v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg></a>
+                <a class="paper-pill project-link" href="va-assembly.html">Explore project <span aria-hidden="true">↗</span></a>
+              </div>
             </div>
+            <p class="spotlight-intro">Training-free 3D part assembly using view-aligned diffusion guidance to optimize part translation, rotation, and scale.</p>
           </header>
           <div class="publication-details">
             <figure class="framework-figure">
@@ -66,12 +86,16 @@
         <article class="publication research-card conference-paper">
           <header class="publication-header">
             <p class="research-type">Conference</p>
-            <h3>3D Part Arrangement for Automated Conceptual Design in Multi-variant Product Manufacturing</h3>
+            <h4><a href="design-automation.html">3D Part Arrangement for Automated Conceptual Design in Multi-variant Product Manufacturing</a></h4>
             <p class="authors"><strong>Yeon-Jae Kim</strong>, Sangwon Kang, Byung-Kwon Min</p>
             <div class="publication-meta">
-              <p class="venue"><a href="https://www.kspe.or.kr/" target="_blank" rel="noopener noreferrer">Korean Society for Precision Engineering (KSPE)</a> Spring Conference · May 2026</p>
-              <span class="presentation-award" title="Awarded August 2026" aria-label="Outstanding Presentation Award, awarded August 2026"><span class="award-star" aria-hidden="true">★</span> Outstanding Presentation Award</span>
+              <p class="venue"><a href="https://www.kspe.or.kr/event/index.html?event=49" target="_blank" rel="noopener noreferrer">Korean Society for Precision Engineering (KSPE) Spring Conference</a> · May 2026</p>
+              <div class="publication-actions">
+                <span class="presentation-award"><span class="award-star" aria-hidden="true">★</span> Outstanding Presentation Award</span>
+                <a class="paper-pill project-link" href="design-automation.html">Explore project <span aria-hidden="true">↗</span></a>
+              </div>
             </div>
+            <p class="spotlight-intro">From user requirements to generated parts and their 3D arrangement for conceptual product design.</p>
           </header>
           <div class="publication-details">
             <figure class="framework-figure">
@@ -79,11 +103,80 @@
             </figure>
           </div>
         </article>
-        <p class="all-publications"><a href="assets/CV_Yeonjae_Kim_public.pdf" target="_blank" rel="noopener noreferrer">Full publication &amp; presentation list in my CV </a></p>
+        </section>
+          <section class="research-group" aria-labelledby="manuscripts-title">
+            <h3 class="research-section-heading" id="manuscripts-title">Manuscripts</h3>
+            <ul class="research-list">
+              <li>
+                <h4>VA-Assembly: View-Aligned Score Guidance for Training-Free 3D Part Assembly</h4>
+                <p class="research-list-authors"><strong>Yeon-Jae Kim</strong>, Sangwon Kang, Byung-Kwon Min</p>
+                <div class="research-list-actions">
+                  <p>International Journal of Computer Vision · Under review (submitted June 2026)</p>
+                  <a class="paper-pill arxiv-pill" href="https://arxiv.org/abs/2611.20788" target="_blank" rel="noopener noreferrer" aria-label="Read the VA-Assembly preprint on arXiv">arXiv<svg aria-hidden="true" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 12 12 4M4 4h8v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg></a>
+                </div>
+              </li>
+              <li>
+                <h4>A Graph Transformer-Based Agent for Feature-Free Machining Process Planning</h4>
+                <p class="research-list-authors">In-Wook Oh, Sangwon Kang, Hee-Min Shin, <strong>Yeon-Jae Kim</strong>, Soon-Hong Hwang, Byung-Kwon Min</p>
+                <p>Journal of Manufacturing Systems · Under review (submitted September 2026)</p>
+              </li>
+            </ul>
+          </section>
+          <section class="research-group" aria-labelledby="conferences-title">
+            <h3 class="research-section-heading" id="conferences-title">Conferences</h3>
+            <ul class="research-list">
+              <li>
+                <h4>Diffusion-Based Toolpath Generation for Five-Axis CNC Machining Leveraging Tool Position and Orientation Tolerances</h4>
+                <p class="research-list-authors">Sangwon Kang, <strong>Yeon-Jae Kim</strong>, In-Woo Song, In-Wook Oh, Byung-Kwon Min</p>
+                <p><a href="https://www.kspe.or.kr/event/index.html?event=50" target="_blank" rel="noopener noreferrer">KSPE Autumn Conference</a> · Accepted for oral presentation, December 2026</p>
+              </li>
+              <li>
+                <h4>3D Part Arrangement for Automated Conceptual Design in Multi-variant Product Manufacturing</h4>
+                <p class="research-list-authors"><strong>Yeon-Jae Kim</strong>, Sangwon Kang, Byung-Kwon Min</p>
+                <div class="research-list-actions">
+                  <p><a href="https://www.kspe.or.kr/event/index.html?event=49" target="_blank" rel="noopener noreferrer">KSPE Spring Conference</a> · Oral presentation, May 2026</p>
+                  <span class="presentation-award"><span class="award-star" aria-hidden="true">★</span> Outstanding Presentation Award</span>
+                </div>
+              </li>
+              <li>
+                <h4>3D CAD Model-Based Process Planning Using a Graph Transformer</h4>
+                <p class="research-list-authors">In-Wook Oh, Sangwon Kang, Hee-Min Shin, <strong>Yeon-Jae Kim</strong>, Byung-Kwon Min</p>
+                <p><a href="https://www.kspe.or.kr/event/index.html?event=49" target="_blank" rel="noopener noreferrer">KSPE Spring Conference</a> · Oral presentation, May 2026</p>
+              </li>
+              <li>
+                <h4>Geometry-Aware Trajectory Generation on NURBS Curves under Machine Kinematic Constraints</h4>
+                <p class="research-list-authors">Sangwon Kang, In-Wook Oh, <strong>Yeon-Jae Kim</strong>, Byung-Kwon Min</p>
+                <p><a href="https://www.kspe.or.kr/event/index.html?event=49" target="_blank" rel="noopener noreferrer">KSPE Spring Conference</a> · Poster presentation, May 2026</p>
+              </li>
+              <li>
+                <h4>Machining Process Planning Model based on Graph Transformer</h4>
+                <p class="research-list-authors">In-Wook Oh, Sangwon Kang, Hee-Min Shin, <strong>Yeon-Jae Kim</strong>, Byoung-Seok Kim, Soon-Hong Hwang, Byung-Kwon Min</p>
+                <p><a href="https://2025.presm.org/" target="_blank" rel="noopener noreferrer">International Conference on Precision Engineering and Sustainable Manufacturing (PRESM)</a> · Poster presentation, July 2025</p>
+              </li>
+            </ul>
+          </section>
+          <section class="research-group" aria-labelledby="patents-title">
+            <h3 class="research-section-heading" id="patents-title">Patents</h3>
+            <ul class="research-list">
+              <li>
+                <h4>Generative AI-Based Product Design Automation and Three-Dimensional Part Placement Optimization Method</h4>
+                <p>Co-inventor · PCT/KR2025/018683; KR 10-2025-0127418 · Patent pending, 2025</p>
+              </li>
+              <li>
+                <h4>System and Method for Automatically Generating Machining Process Plans and Manufacturing Codes</h4>
+                <p>Co-inventor · PCT/KR2025/018682; KR 10-2025-0073514 · Patent pending, 2025</p>
+              </li>
+              <li>
+                <h4>Device and Method for Generating Manufacturing Process Planning Data Set Using Software</h4>
+                <p>Co-inventor · KR 10-2025-0073582 · Patent pending, 2025</p>
+              </li>
+            </ul>
+          </section>
+        <p class="all-publications"><a href="assets/CV_Yeonjae_Kim_public.pdf" target="_blank" rel="noopener noreferrer">Full research record in my CV</a></p>
       </div>
     </div></section>
 
-    <section class="section-shell section-grid contact-section" id="contact" aria-labelledby="contact-title"><div class="section-label"><h2 id="contact-title">Contact</h2></div><div class="section-content"><a class="contact-email" href="mailto:yeonjaekim@yonsei.ac.kr">yeonjaekim@yonsei.ac.kr </a><p>Manufacturing &amp; Mechatronics Lab<br />Yonsei University, Republic of Korea</p></div></section>
+    <section class="section-shell section-grid contact-section" id="contact" aria-labelledby="contact-title"><div class="section-label"><h2 id="contact-title">Contact</h2></div><div class="section-content"><a class="contact-email" href="mailto:yeonjaekim@yonsei.ac.kr">yeonjaekim@yonsei.ac.kr </a><p><a href="https://minlab.yonsei.ac.kr/" target="_blank" rel="noopener noreferrer">Manufacturing &amp; Mechatronics Lab</a><br />Yonsei University, Republic of Korea</p></div></section>
   </main>
   <footer><div class="footer-shell"><span>© 2026 Yeon-Jae Kim</span><div><a href="assets/CV_Yeonjae_Kim_public.pdf" target="_blank" rel="noopener noreferrer">CV</a><a href="#about">Back to top</a></div></div></footer>
 </body>
