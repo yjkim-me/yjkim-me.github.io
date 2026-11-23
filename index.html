@@ -12,12 +12,12 @@
   <meta property="og:url" content="https://yjkim-me.github.io/" />
   <title>Yeon-Jae Kim | Robotics &amp; Generative Intelligence</title>
   <script src="theme.js?v=20261119"></script>
-  <link rel="stylesheet" href="style.css?v=20261123-1" />
+  <link rel="stylesheet" href="style.css?v=20261123-3" />
   <link rel="stylesheet" href="project.css?v=20261119-2" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header"><div class="nav-shell"><a class="site-name" href="#about">Yeon-Jae Kim</a><div class="nav-controls"><nav aria-label="Primary navigation"><a href="#about">Home</a><a href="#research">Ongoing</a><a href="#publications">Research</a><a href="#contact">Contact</a></nav><button class="theme-toggle" type="button" aria-label="Switch to dark mode" hidden>
+  <header class="site-header"><div class="nav-shell"><a class="site-name" href="#about">Yeon-Jae Kim</a><div class="nav-controls"><nav aria-label="Primary navigation"><a href="#about">Home</a><a href="#research">Vision</a><a href="#publications">Research</a><a href="#contact">Contact</a></nav><button class="theme-toggle" type="button" aria-label="Switch to dark mode" hidden>
     <svg class="theme-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20.5 13A8.5 8.5 0 0 1 11 3.5 8.5 8.5 0 1 0 20.5 13Z" /></svg>
     <svg class="theme-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5" /></svg>
   </button></div></div></header>
@@ -43,16 +43,31 @@
     </section>
 
     <section class="section-shell section-grid research-section" id="research" aria-labelledby="research-title">
-      <div class="section-label"><h2 id="research-title">Ongoing Research</h2></div>
-      <article class="section-content current-project research-card">
-        <header class="publication-header">
-          <p class="research-type">In progress</p>
-          <h3>Diffusion-guided robot trajectory optimization</h3>
-          <p class="research-description">Jointly optimizing a robot’s path and timing with diffusion priors, aiming for collision-free, dynamically feasible, time-efficient motion.</p>
-          <p class="research-status">Evaluating motion feasibility and execution time in simulation.</p>
+      <div class="section-label"><h2 id="research-title">Research Vision &amp; Ongoing Work</h2></div>
+      <div class="section-content assembly-vision">
+        <header class="vision-intro">
+          <h3>Toward autonomous robotic assembly</h3>
+          <p>My research aims to enable robots to plan and carry out an entire assembly process. I am starting with diffusion-guided trajectory generation, with plans to extend this work to contact-rich manipulation and assembly sequence planning.</p>
         </header>
-        <!-- Add a research figure here when available. -->
-      </article>
+        <ol class="research-roadmap" aria-label="Three stages toward autonomous robotic assembly">
+          <li class="roadmap-stage roadmap-current">
+            <div class="roadmap-label"><span class="roadmap-number" aria-hidden="true">01</span><p class="research-type">In progress</p></div>
+            <h4>Trajectory generation</h4>
+            <p>Diffusion-guided joint optimization of robot paths and timing, aiming for collision-free, dynamically feasible, time-efficient motion.</p>
+            <p class="roadmap-status">Currently evaluating motion feasibility and execution time in simulation.</p>
+          </li>
+          <li class="roadmap-stage">
+            <div class="roadmap-label"><span class="roadmap-number" aria-hidden="true">02</span><p class="research-type">Future direction</p></div>
+            <h4>Contact-rich manipulation</h4>
+            <p>Extend trajectory generation to manipulation that handles contact during robotic assembly, connecting planned motion with physical interaction between parts.</p>
+          </li>
+          <li class="roadmap-stage">
+            <div class="roadmap-label"><span class="roadmap-number" aria-hidden="true">03</span><p class="research-type">Future direction</p></div>
+            <h4>Assembly sequence planning</h4>
+            <p>Determine the order of assembly and coordinate trajectory generation with contact-rich manipulation toward automation of the complete assembly pipeline.</p>
+          </li>
+        </ol>
+      </div>
     </section>
 
     <section class="section-band" id="publications" aria-labelledby="publications-title"><div class="section-shell section-grid publications-layout">

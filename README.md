@@ -7,7 +7,7 @@ A concise academic homepage for GitHub Pages. Plain HTML, CSS, and a small theme
 The homepage presents Yeon-Jae Kim's research, academic background, and contact information in a responsive layout with light and dark themes.
 
 - Profile beside a short biography, interests, and two-line academic history
-- Ongoing Research for current work and future directions
+- Research Vision & Ongoing Work: a three-stage roadmap toward autonomous robotic assembly, with trajectory generation in progress and contact-rich manipulation and assembly sequence planning marked as future directions
 - Spotlight cards for VA-Assembly and the KSPE Spring presentation, with its presentation award marked by a star
 - Research organized into Spotlight, Manuscripts, Conferences, and Patents, with full author lists
 - Research section shortcuts and official conference links
@@ -39,7 +39,7 @@ Detailed experience, skills, and the complete research record are available in `
 
 Open `index.html` directly, or run `python -m http.server 8000` from this folder. Publish through the existing GitHub Pages branch; no build step is needed.
 
-Keep research status accurate when updating the page. The VA-Assembly section uses the supplied paper framework. The ongoing trajectory research currently has no figure; its status label follows the same style as the Spotlight research types.
+Keep research status accurate when updating the page. The VA-Assembly section uses the supplied paper framework. The assembly roadmap distinguishes current trajectory generation research from future contact-rich manipulation and assembly sequence planning. Its status labels follow the Spotlight research types; future stages describe directions rather than completed results.
 
 ## Appearance
 
