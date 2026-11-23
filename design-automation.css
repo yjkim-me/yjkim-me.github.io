@@ -1,0 +1,36 @@
+.design-page .project-hero { padding-block: 32px 40px; text-align: center; }
+.design-page .project-back { display: block; width: fit-content; margin-bottom: 36px; }
+.design-page .project-hero h1 { max-width: 1000px; margin: 0 auto 28px; font-family: Arial, Helvetica, sans-serif; font-size: clamp(1.75rem, 3.5vw, 2.75rem); font-weight: 600; line-height: 1.22; letter-spacing: -.025em; }
+.design-page .project-hero .authors { margin-bottom: 12px; color: var(--ink); font-size: 1.25rem; line-height: 1.6; }
+.design-page .project-hero .venue { color: var(--ink); font-size: 1.125rem; line-height: 1.6; }
+.design-page .project-hero .publication-meta { justify-content: center; gap: 12px 20px; }
+.design-page .project-resources { margin-top: 22px; justify-content: center; }
+.design-tldr { width: min(100%, 840px); margin: 0 auto 28px; padding-inline: clamp(20px, 3vw, 40px); font-size: 1.125rem; line-height: 1.7; }
+.design-tldr strong { margin-right: .55em; color: var(--link); }
+.design-page .project-section { padding-block: 46px; }
+.design-page .project-section h2 { margin-bottom: 18px; font-size: 1.875rem; }
+.design-page .project-section.design-overview { width: min(100%, 840px); margin-inline: auto; padding: 32px clamp(20px, 3vw, 40px); background: var(--band); border: 1px solid var(--line); border-radius: 12px; }
+.design-page .project-section.design-overview h2 { text-align: center; font-family: Arial, Helvetica, sans-serif; font-size: 1.125rem; font-weight: 700; line-height: 1.4; letter-spacing: 0; }
+.design-page .design-overview > p { margin-inline: auto; font-size: 1.0625rem; line-height: 1.75; }
+.design-method-heading { padding-left: 22px; margin-bottom: 28px; border-left: 3px solid var(--link); }
+.design-method-heading .research-type { color: var(--link); margin-bottom: 8px; }
+.design-page .design-method-heading h2 { font-size: clamp(1.875rem, 3.4vw, 2.5rem); margin-bottom: 12px; }
+.design-method-heading > p:last-child { max-width: 780px; color: var(--ink); font-size: 1.1875rem; line-height: 1.6; }
+.design-page .framework-link { padding: 12px; border: 1px solid var(--subtle-line); border-radius: 5px; }
+.design-page .framework-link:hover { outline: none; border-color: var(--button-border); }
+.design-page .project-figure figcaption { font-size: .875rem; line-height: 1.65; }
+.design-page .project-steps { margin-top: 32px; gap: 28px; }
+.design-page .project-steps li { padding: 0; border: 0; border-radius: 0; background: transparent; }
+.design-page .project-steps li::before { display: none; }
+.design-page .project-steps h3 { margin-bottom: 10px; font-size: 1.125rem; }
+.design-page .project-steps p { font-size: 1rem; line-height: 1.7; }
+.design-page .conference-gallery { width: min(100%, 900px); margin: 28px auto 0; }
+.design-page .conference-photo-placeholder { background: var(--band); }
+@media(max-width: 600px) {
+  .design-page .project-hero { padding-block: 26px; }
+  .design-page .project-section { padding-block: 32px; }
+  .design-page .project-section h2 { font-size: 1.625rem; }
+  .design-page .project-section.design-overview { padding: 28px 20px; }
+  .design-method-heading { padding-left: 16px; }
+  .design-page .framework-link { padding: 6px; }
+}

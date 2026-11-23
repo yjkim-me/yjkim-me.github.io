@@ -12,7 +12,7 @@
   <meta property="og:url" content="https://yjkim-me.github.io/" />
   <title>Yeon-Jae Kim | Robotics &amp; Generative Intelligence</title>
   <script src="theme.js?v=20261119"></script>
-  <link rel="stylesheet" href="style.css?v=20261120-1" />
+  <link rel="stylesheet" href="style.css?v=20261123-1" />
   <link rel="stylesheet" href="project.css?v=20261119-2" />
 </head>
 <body>
@@ -45,8 +45,13 @@
     <section class="section-shell section-grid research-section" id="research" aria-labelledby="research-title">
       <div class="section-label"><h2 id="research-title">Ongoing Research</h2></div>
       <article class="section-content current-project research-card">
-        <figure class="research-thumbnail"><img src="images/motion-concept.svg" alt="Concept illustration of a robot path avoiding an obstacle with jointly optimized timing" width="600" height="360" /><figcaption>Trajectory concept</figcaption></figure>
-        <div><h3>Diffusion-guided robot trajectory optimization</h3><p>Jointly optimizing a robot’s path and timing with diffusion priors, aiming for collision-free, dynamically feasible, time-efficient motion.</p><p class="research-status">In progress · Evaluating motion feasibility and execution time in simulation.</p></div>
+        <header class="publication-header">
+          <p class="research-type">In progress</p>
+          <h3>Diffusion-guided robot trajectory optimization</h3>
+          <p class="research-description">Jointly optimizing a robot’s path and timing with diffusion priors, aiming for collision-free, dynamically feasible, time-efficient motion.</p>
+          <p class="research-status">Evaluating motion feasibility and execution time in simulation.</p>
+        </header>
+        <!-- Add a research figure here when available. -->
       </article>
     </section>
 
@@ -77,11 +82,6 @@
             </div>
             <p class="spotlight-intro">Training-free 3D part assembly using view-aligned diffusion guidance to optimize part translation, rotation, and scale.</p>
           </header>
-          <div class="publication-details">
-            <figure class="framework-figure">
-              <a class="framework-link" href="framework.html" target="_blank" rel="noopener noreferrer" aria-label="View the VA-Assembly framework in a new tab"><img src="images/assembly_framework.svg" alt="VA-Assembly framework: reference-image-based 3D asset preparation and view-aligned score-guided optimization of part transformations." width="4257" height="1402" loading="lazy" /></a>
-            </figure>
-          </div>
         </article>
         <article class="publication research-card conference-paper">
           <header class="publication-header">
@@ -97,11 +97,6 @@
             </div>
             <p class="spotlight-intro">From user requirements to generated parts and their 3D arrangement for conceptual product design.</p>
           </header>
-          <div class="publication-details">
-            <figure class="framework-figure">
-              <a class="framework-link" href="design-framework.html" target="_blank" rel="noopener noreferrer" aria-label="View the KSPE design automation framework in a new tab"><img src="images/design_automation_framework.svg" alt="Design automation framework presented at the KSPE Spring Conference." width="3923" height="1265" loading="lazy" /></a>
-            </figure>
-          </div>
         </article>
         </section>
           <section class="research-group" aria-labelledby="manuscripts-title">

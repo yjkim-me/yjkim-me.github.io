@@ -14,8 +14,9 @@
   <script src="theme.js?v=20261119"></script>
   <link rel="stylesheet" href="style.css?v=20261120-1" />
   <link rel="stylesheet" href="project.css?v=20261119-2" />
+  <link rel="stylesheet" href="va-assembly.css?v=20261120-11" />
 </head>
-<body>
+<body class="va-page">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header"><div class="nav-shell"><a class="site-name" href="index.html#about">Yeon-Jae Kim</a><div class="nav-controls"><nav aria-label="Primary navigation"><a href="index.html#about">Home</a><a href="index.html#research">Ongoing</a><a href="index.html#publications">Research</a><a href="index.html#contact">Contact</a></nav><button class="theme-toggle" type="button" aria-label="Switch to dark mode" hidden>
     <svg class="theme-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20.5 13A8.5 8.5 0 0 1 11 3.5 8.5 8.5 0 1 0 20.5 13Z" /></svg>
@@ -24,48 +25,190 @@
   <main class="project-shell" id="main">
     <header class="project-hero">
       <a class="project-back" href="index.html#featured-research">← Back to Spotlight</a>
-      <p class="research-type">Preprint</p>
+      <p class="research-type">Research project · Preprint</p>
       <h1>VA-Assembly: View-Aligned Score Guidance for Training-Free 3D Part Assembly</h1>
       <p class="authors"><strong>Yeon-Jae Kim</strong>, Sangwon Kang, Byung-Kwon Min</p>
-      <div class="publication-meta"><p class="venue">International Journal of Computer Vision · Under review (submitted June 2026)</p></div>
-      <p class="project-lead">Training-free 3D part assembly using view-aligned diffusion guidance to optimize part translation, rotation, and scale.</p>
+      <p class="venue">International Journal of Computer Vision · Under review (submitted June 2026)</p>
+      <div class="project-resources"><a class="paper-pill arxiv-pill" href="https://arxiv.org/abs/2611.20788" target="_blank" rel="noopener noreferrer">arXiv ↗</a><a class="paper-pill" href="https://arxiv.org/pdf/2611.20788" target="_blank" rel="noopener noreferrer">Read paper ↗</a></div>
     </header>
-    <nav class="project-toc" aria-label="Project sections">
-      <a href="#overview">Overview</a><a href="#key-idea">Key idea</a><a href="#method">Method</a><a href="#resources">Resources</a>
-    </nav>
+    <aside class="va-tldr" aria-label="Research in brief">
+      <p><strong>TL;DR</strong> Given a single reference image and independently prepared 3D parts, VA-Assembly uses view-aligned diffusion guidance to optimize their position, orientation, and scale—without additional training, while keeping each part separately editable.</p>
+    </aside>
+    <section class="project-section va-abstract" id="abstract" aria-labelledby="abstract-title">
+      <h2 id="abstract-title">Abstract</h2>
+      <p>Image-to-3D models can reconstruct an object from a single image, but typically produce a monolithic representation. Editing, replacing, or reconfiguring individual components requires explicit part-level structure. Existing part-aware generation and learning-based assembly methods often depend on part-level supervision, category-specific priors, or paired part-layout training data.</p>
+      <p>We consider independently prepared or generated 3D parts with no predefined inter-part relationships, shared coordinate frames, or consistent scales. The challenge is to assemble these parts into a reference-consistent object while preserving each component as a separate, editable asset.</p>
+      <p>We introduce <strong>VA-Assembly</strong>, a training-free framework that optimizes part translation, rotation, and scale from a single reference image. Its core is <strong>view-aligned score guidance</strong>: a frozen diffusion model is conditioned on same-view renderings of a reference-derived 3D representation, providing structural guidance under large initial misalignment. Only part transformations are updated; the input geometries remain fixed and explicitly separable. The framework requires no annotated part layouts or category-specific assembly training, and supports downstream component-level editing, replacement, and reconfiguration.</p>
+    </section>
     <section class="project-section" id="overview" aria-labelledby="overview-title">
       <h2 id="overview-title">Overview</h2>
-      <p>VA-Assembly studies how separately prepared 3D parts can be arranged into a compositional object using a reference image. The method optimizes each part’s translation, rotation, and scale without task-specific model training.</p>
-    </section>
-    <section class="project-section" id="key-idea" aria-labelledby="key-idea-title">
-      <h2 id="key-idea-title">Key idea</h2>
-      <p>Use view-aligned diffusion guidance to connect the appearance of a rendered assembly with the arrangement of its 3D parts.</p>
-      <!-- Add a dedicated concept figure here when available, with descriptive alt text and a caption. -->
-      <ol class="project-steps">
-        <li><h3>Prepare parts</h3><p>Build the 3D assets from part images associated with the reference object.</p></li>
-        <li><h3>Render the assembly</h3><p>Render the current part arrangement to provide a visual representation for guidance.</p></li>
-        <li><h3>Refine transformations</h3><p>Use view-aligned score guidance to optimize part positions, orientations, and scales.</p></li>
-      </ol>
-    </section>
-    <section class="project-section" id="method" aria-labelledby="method-title">
-      <h2 id="method-title">Method</h2>
-      <p>The framework connects 3D asset preparation with iterative transformation optimization. The diagram shows the reference input, part representations, rendering, and diffusion-guided update process.</p>
-      <figure class="project-figure">
-        <a class="framework-link" href="framework.html" target="_blank" rel="noopener noreferrer" aria-label="Open the VA-Assembly framework viewer"><img src="images/assembly_framework.svg" alt="VA-Assembly pipeline showing 3D asset preparation and view-aligned score-guided transformation optimization." width="4257" height="1402" loading="lazy" /></a>
-        <figcaption>VA-Assembly framework. Select the diagram to open the larger viewer.</figcaption>
+      <p>VA-Assembly estimates the translation, rotation, and scale of independently prepared 3D parts from a single reference image. The parts have no predefined inter-part layout, shared coordinate frame, or consistent scale. Their geometries remain fixed and explicitly separable throughout optimization.</p>
+      <figure class="va-figure" id="fig-1">
+        <a class="va-figure-frame" href="framework.html?figure=1" target="_blank" rel="noopener noreferrer" aria-label="Enlarge Figure 1: From independent parts to an assembled object"><img src="images/VA-Assembly/Fig1.svg" alt="Pipeline from reference-image-based 3D asset preparation to view-aligned transformation optimization and an assembled suitcase." width="4257" height="1402" loading="eager" decoding="async" /></a>
+        <figcaption><span>Fig. 1 · Overview of the VA-Assembly pipeline: 3D asset preparation and view-aligned score-guided transformation optimization.</span></figcaption>
       </figure>
-      <!-- Expand this section with equations and method details when ready. -->
     </section>
-    <!-- Results: remove hidden after adding real result images, videos, or evaluation data.
-         Add a corresponding link to #results in the project navigation when ready. -->
-    <section class="project-section" id="results" aria-labelledby="results-title" hidden>
+    <section class="project-section va-guidance" id="method" aria-labelledby="key-idea">
+      <header class="va-guidance-heading">
+        <p class="research-type">Core method</p>
+        <h2 id="key-idea">View-Aligned Score Guidance</h2>
+        <p class="va-section-lead">Transformation-level supervision from a pretrained view-conditioned diffusion prior.</p>
+      </header>
+      <p>The key idea is to condition a frozen view-conditioned diffusion model on <strong>same-view renderings of a reference-derived monolithic 3D representation</strong>. The conditioning signal and the current part configuration share the same camera viewpoint, yielding geometrically aligned score gradients for part translation, rotation, and scale.</p>
+      <section class="va-subsection" id="conditioning-detail" aria-labelledby="conditioning-title">
+        <h3 id="conditioning-title">Diffusion Score Guidance and Target-View Conditioning</h3>
+        <p>Original Zero-1-to-3 predicts a target view from a fixed source image and a relative camera pose. VA-Assembly instead uses a target-view rendering of the monolithic reference as the condition. This anchors the score to view-specific silhouette, part proportions, and inter-part layout.</p>
+        <div class="va-figure-pair">
+          <figure class="va-figure" id="fig-2">
+        <a class="va-figure-frame" href="framework.html?figure=2" target="_blank" rel="noopener noreferrer" aria-label="Enlarge Figure 2: A more consistent target view"><img src="images/VA-Assembly/Fig2.svg" alt="Original Zero-1-to-3 and view-aligned conditioning compared through reference images, generated images, and difference maps." width="3190" height="2110" loading="lazy" decoding="async" /></a>
+        <figcaption><span>Fig. 2 · Effect of view-aligned score guidance on target-view generation. Darker difference maps indicate smaller discrepancies.</span></figcaption>
+      </figure>
+          <div id="noise-detail"><figure class="va-figure" id="fig-3">
+        <a class="va-figure-frame" href="framework.html?figure=3" target="_blank" rel="noopener noreferrer" aria-label="Enlarge Figure 3: Global structure and local detail"><img src="images/VA-Assembly/Fig3.svg" alt="A broken goblet rendering and reference condition with decoded clean-latent estimates at diffusion timesteps 850, 450, and 250." width="3020" height="2083" loading="lazy" decoding="async" /></a>
+        <figcaption><span>Fig. 3 · Clean-latent estimates decoded at different diffusion timesteps. High-noise guidance emphasizes broad structure; lower-noise guidance retains local detail.</span></figcaption>
+      </figure></div>
+        </div>
+        <p class="va-context">Higher-noise scores induce broader layout and silhouette corrections, while lower-noise scores retain local boundary information. This supports using SDS as early-stage global structural guidance.</p>
+      </section>
+      <section class="va-subsection" aria-labelledby="sds-title">
+        <h3 id="sds-title">View-Aligned SDS Objective</h3>
+        <p>The current composition is rendered, encoded, and perturbed with Gaussian noise. The frozen diffusion model predicts the noise under the same-view reference condition. The resulting score gradients are backpropagated through differentiable rendering to update <strong>only the part transformation parameters</strong>.</p>
+        <figure class="va-figure" id="fig-4">
+        <a class="va-figure-frame" href="framework.html?figure=4" target="_blank" rel="noopener noreferrer" aria-label="Enlarge Figure 4: The two branches meet in a shared view"><img src="images/VA-Assembly/Fig4.svg" alt="Diagram of matched-view reference conditioning, current rendering, a frozen Zero-1-to-3 model, and gradients flowing back to the part transformations." width="6013" height="2256" loading="lazy" decoding="async" /></a>
+        <figcaption><span>Fig. 4 · View-aligned score distillation for part transformation optimization. Gradients are backpropagated from the same-view-conditioned diffusion model to the part transformations.</span></figcaption>
+      </figure>
+        <p class="va-context">The relative camera transformation condition is set to the identity view change: each score is evaluated against a same-view reference, rather than a novel-view prediction from a fixed source image.</p>
+      </section>
+      <section class="va-subsection" id="views-detail" aria-labelledby="views-title">
+        <h3 id="views-title">Multi-View Score Aggregation</h3>
+        <p>Single-view SDS can produce projection-biased gradients. VA-Assembly aggregates view-aligned scores across 12 randomly sampled viewpoints per iteration, providing complementary silhouette, depth, and occlusion constraints for 3D transformation optimization.</p>
+        <figure class="va-figure" id="fig-5">
+        <a class="va-figure-frame" href="framework.html?figure=5" target="_blank" rel="noopener noreferrer" aria-label="Enlarge Figure 5: One view leaves some directions weakly constrained"><img src="images/VA-Assembly/Fig5.svg" alt="Single-view rendering of a 3D object beside a visualization of projection-biased SDS gradients." width="2797" height="1541" loading="lazy" decoding="async" /></a>
+        <figcaption><span>Fig. 5 · View-dependent 3D SDS gradients from single-view rendering, motivating multi-view score aggregation.</span></figcaption>
+      </figure>
+      </section>
+      <section class="va-subsection" aria-labelledby="refinement-title">
+        <h3 id="refinement-title">Late-Stage Geometric and Photometric Refinement</h3>
+        <p>View-aligned SDS drives coarse global arrangement for the first 40 iterations. Visibility-filtered Chamfer distance and RGB consistency are activated during the final 10 iterations to refine visible-surface alignment and appearance consistency.</p>
+      </section>
+    </section>
+    <section class="project-section" id="results" aria-labelledby="results-title">
       <h2 id="results-title">Results</h2>
-      <!-- Add verified qualitative examples and quantitative results here. -->
+      <section class="va-subsection" aria-labelledby="arrangement-title">
+        <h3 id="arrangement-title">Comparison with 3D Part Arrangement Methods</h3>
+        <p>The transformation benchmark contains 80 target compositions using GSO and Breaking Bad assets, with substantial initial translation, rotation, and scale perturbations.</p>
+        <div class="va-results-grid">
+          <div class="va-results-visual">
+            <figure class="va-figure" id="fig-6">
+        <a class="va-figure-frame" href="framework.html?figure=6" target="_blank" rel="noopener noreferrer" aria-label="Enlarge Figure 6: Arrangement results"><img src="images/VA-Assembly/Fig6.svg" alt="Six assembly comparisons showing initial states, targets, Go-ICP, TEASER++, REPARO, and VA-Assembly outputs." width="9295" height="7088" loading="lazy" decoding="async" /></a>
+        <figcaption><span>Fig. 6 · Qualitative comparison on Breaking Bad (top three rows) and GSO (bottom three rows) under challenging initialization.</span></figcaption>
+      </figure>
+            <p class="va-context">Go-ICP does not estimate scale and REPARO does not estimate rotation. Quantitative comparisons therefore use each baseline’s supported transformation components.</p>
+          </div>
+          <div id="quantitative-results">
+          <div class="va-table-wrap" role="region" aria-label="Table 2: all transformation protocols" tabindex="0">
+          <table class="va-table">
+            <caption>Table 2: Quantitative comparison within baseline-supported transformation spaces</caption>
+            <colgroup><col class="va-parameter-col" /><col class="va-method-col" /></colgroup>
+            <colgroup span="2"></colgroup><colgroup span="2"></colgroup><colgroup span="2"></colgroup><colgroup span="2"></colgroup>
+            <thead>
+              <tr><th rowspan="2" scope="col">Optimization<br />parameters</th><th rowspan="2" scope="col">Method</th><th colspan="2" scope="colgroup">Chamf. [NCS] ↓</th><th colspan="2" scope="colgroup">Trans. [NCS] ↓</th><th colspan="2" scope="colgroup">Rot. [deg] ↓</th><th colspan="2" scope="colgroup">Scale ↓</th></tr>
+              <tr><th scope="col">Mean</th><th scope="col">SD</th><th scope="col">Mean</th><th scope="col">SD</th><th scope="col">Mean</th><th scope="col">SD</th><th scope="col">Mean</th><th scope="col">SD</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="va-parameters" scope="rowgroup" rowspan="3">Translation,<br />Rotation</th>
+                <th scope="row">Go-ICP</th>
+                <td>0.181</td><td>0.179</td>
+                <td>0.269</td><td>0.280</td>
+                <td>44.61</td><td>28.324</td>
+                <td aria-label="Not optimized">–</td><td aria-label="Not optimized">–</td>
+              </tr>
+              <tr>
+                <th scope="row">Assembler</th>
+                <td>0.037</td><td>0.004</td>
+                <td>0.049</td><td>0.001</td>
+                <td>61.038</td><td>25.156</td>
+                <td aria-label="Not optimized">–</td><td aria-label="Not optimized">–</td>
+              </tr>
+              <tr>
+                <th scope="row">Ours</th>
+                <td>0.019</td><td>0.007</td>
+                <td>0.051</td><td>0.013</td>
+                <td>14.061</td><td>37.415</td>
+                <td aria-label="Not optimized">–</td><td aria-label="Not optimized">–</td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <th class="va-parameters" scope="rowgroup" rowspan="2">Translation,<br />Scale</th>
+                <th scope="row">REPARO</th>
+                <td>0.257</td><td>0.077</td>
+                <td>0.406</td><td>0.093</td>
+                <td aria-label="Not optimized">–</td><td aria-label="Not optimized">–</td>
+                <td>0.150</td><td>0.034</td>
+              </tr>
+              <tr>
+                <th scope="row">Ours</th>
+                <td>0.017</td><td>0.009</td>
+                <td>0.039</td><td>0.021</td>
+                <td aria-label="Not optimized">–</td><td aria-label="Not optimized">–</td>
+                <td>0.005</td><td>0.001</td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <th class="va-parameters" scope="rowgroup" rowspan="2">Translation,<br />Rotation,<br />Scale</th>
+                <th scope="row">TEASER++</th>
+                <td>0.063</td><td>0.027</td>
+                <td>0.074</td><td>0.063</td>
+                <td>50.843</td><td>68.169</td>
+                <td>0.017</td><td>0.022</td>
+              </tr>
+              <tr>
+                <th scope="row">Ours</th>
+                <td>0.021</td><td>0.007</td>
+                <td>0.042</td><td>0.023</td>
+                <td>18.015</td><td>42.524</td>
+                <td>0.019</td><td>0.020</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+          <p class="va-source">Ours denotes VA-Assembly. Mean and SD are reported separately; lower is better. NCS denotes normalized coordinates. A dash indicates a transformation component not optimized in that protocol. <a href="https://arxiv.org/html/2611.20788v1#S5.T2" target="_blank" rel="noopener noreferrer">Table 2 in the paper ↗</a></p>
+        </div>
+        </div>
+      </section>
+      <section class="va-subsection" id="part-structure" aria-labelledby="part-title">
+        <h3 id="part-title">Comparison with Part-Aware 3D Generation Methods</h3>
+        <p>VA-Assembly preserves explicit part organization and direct component-level editability. Assembled and exploded views compare the final part-aware outputs with Part123 and OmniPart; these are generation baselines, not direct part transformation optimization baselines.</p>
+        <figure class="va-figure" id="fig-7">
+        <a class="va-figure-frame" href="framework.html?figure=7" target="_blank" rel="noopener noreferrer" aria-label="Enlarge Figure 7: Inspect the exploded views"><img src="images/VA-Assembly/Fig7.svg" alt="Six reference images with assembled and exploded outputs from Part123, OmniPart, and VA-Assembly, showing how component organization differs." width="4206" height="3922" loading="lazy" decoding="async" /></a>
+        <figcaption><span>Fig. 7 · Qualitative comparison with part-aware 3D generation methods. Assembled and exploded views visualize part-level structure.</span></figcaption>
+      </figure>
+      </section>
+      <section class="va-subsection" id="guidance-evidence" aria-labelledby="ablation-title">
+        <h3 id="ablation-title">Ablation Studies</h3>
+        <p>Under global initialization, view-aligned SDS produces translation updates more closely aligned with the ground-truth direction than RGB supervision. A cosine similarity closer to 1 indicates better alignment with the correct update direction.</p>
+        <figure class="va-figure" id="fig-8">
+        <a class="va-figure-frame" href="framework.html?figure=8" target="_blank" rel="noopener noreferrer" aria-label="Enlarge Figure 8: Reading the update directions"><img src="images/VA-Assembly/Fig8.svg" alt="Line plot of translation-update cosine similarity over 20 steps, with VA-SDS generally higher than RGB supervision." width="680" height="300" loading="lazy" decoding="async" /></a>
+        <figcaption><span>Fig. 8 · Translation-gradient alignment under global initialization. Higher cosine similarity indicates better alignment with the ground-truth update direction.</span></figcaption>
+      </figure>
+        <p class="va-context">The guidance ablation further isolates the benefit of aligning the conditioning view with the rendered optimization view. View-aligned conditioning provides more reliable transformation gradients than single-view or conventional multi-view Zero-1-to-3 guidance. <a href="https://arxiv.org/html/2611.20788v1#S5.SS5" target="_blank" rel="noopener noreferrer">Read the ablation study ↗</a></p>
+      </section>
     </section>
-
-    <section class="project-section" id="resources" aria-labelledby="resources-title">
-      <h2 id="resources-title">Resources</h2>
-      <div class="project-resources"><a class="paper-pill arxiv-pill" href="https://arxiv.org/abs/2611.20788" target="_blank" rel="noopener noreferrer">Read on arXiv ↗</a><a class="paper-pill" href="framework.html" target="_blank" rel="noopener noreferrer">View framework ↗</a></div>
+    <section class="project-section" id="extensions" aria-labelledby="extensions-title">
+      <h2 id="extensions-title">Applications</h2>
+      <p class="va-section-lead">Hierarchical 3D Part Assembly for Product Design</p>
+      <p>Lower-level parts are first arranged using a sub-assembly reference. The optimized sub-assembly is then treated as a higher-level component, preserving the relative transformations of its constituent parts. This supports structures that are not fully observable in a single exterior reference image.</p>
+      <figure class="va-figure" id="fig-9">
+        <a class="va-figure-frame" href="framework.html?figure=9" target="_blank" rel="noopener noreferrer" aria-label="Enlarge Figure 9: A manual coffee grinder, assembled in stages"><img src="images/VA-Assembly/Fig9.svg" alt="Three stages of hierarchical assembly for a manual coffee grinder, showing reference images, separate parts, and combined results linked between stages." width="2461" height="1570" loading="lazy" decoding="async" /></a>
+        <figcaption><span>Fig. 9 · Hierarchical 3D part assembly for product design. Intermediate sub-assemblies are reused as higher-level components.</span></figcaption>
+      </figure>
+      <p class="va-context">The method targets reference-consistent arrangement of fixed, separable parts. Stronger contact reasoning, collision handling, and physically constrained multi-part assembly remain future directions.</p>
+    </section>
+    <section class="va-paper-note" id="resources" aria-label="Paper source">
+      <p>Figures and results from <a href="https://arxiv.org/html/2611.20788v1" target="_blank" rel="noopener noreferrer">VA-Assembly · arXiv:2611.20788v1 ↗</a></p>
     </section>
     <div class="project-bottom"><a href="index.html#featured-research">← Back to Spotlight</a><a href="design-automation.html">Explore design automation →</a></div>
   </main>
