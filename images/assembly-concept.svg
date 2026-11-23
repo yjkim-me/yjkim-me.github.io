@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="360" viewBox="0 0 600 360" fill="none">
+  <defs><pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#dce5e6"/></pattern><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="m1 1 7 4-7 4" stroke="#789297" stroke-width="1.5"/></marker></defs>
+  <rect width="600" height="360" fill="#f2f7f7"/><rect x="24" y="24" width="552" height="288" fill="url(#grid)"/>
+  <g stroke="#597d84" stroke-width="1.4" stroke-linejoin="round">
+    <path d="m69 88 59-25 54 25-59 26Z" fill="#d6e8e9"/><path d="m69 88 54 26v17L69 106Z" fill="#afcbcf"/><path d="m123 114 59-26v18l-59 25Z" fill="#7aa4ac"/>
+    <path d="m63 210 23-10 19 9-23 10Z" fill="#d6e8e9"/><path d="m63 210 19 9v61l-19-9Z" fill="#afcbcf"/><path d="m82 219 23-10v61l-23 10Z" fill="#7aa4ac"/>
+    <path d="m172 191 23-10 19 9-23 10Z" fill="#d6e8e9"/><path d="m172 191 19 9v61l-19-9Z" fill="#afcbcf"/><path d="m191 200 23-10v61l-23 10Z" fill="#7aa4ac"/>
+    <path d="m146 141 36-15 11 6-36 15Z" fill="#e8d7c1"/><path d="m146 141 11 6v54l-11-6Z" fill="#d8bc99"/><path d="m157 147 36-15v54l-36 15Z" fill="#e8d7c1"/>
+  </g>
+  <path d="M237 174h110" stroke="#789297" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="260" y="148" width="63" height="52" rx="26" fill="#fff" stroke="#c8d9dc"/><path d="m276 174 15-14 15 14-15 14Z" stroke="#326c77" stroke-width="1.6"/><path d="M291 160v28m-15-14h30" stroke="#326c77"/>
+  <g stroke="#597d84" stroke-width="1.5" stroke-linejoin="round">
+    <path d="m414 187 16 7v59l-16-7Z" fill="#afcbcf"/><path d="m430 194 17-7v59l-17 7Z" fill="#7aa4ac"/>
+    <path d="m469 164 16 7v59l-16-7Z" fill="#afcbcf"/><path d="m485 171 17-7v59l-17 7Z" fill="#7aa4ac"/>
+    <path d="m390 174 59-25 54 25-59 26Z" fill="#d6e8e9"/><path d="m390 174 54 26v17l-54-25Z" fill="#afcbcf"/><path d="m444 200 59-26v18l-59 25Z" fill="#7aa4ac"/>
+    <path d="m390 114 59-25 12 6-59 25Z" fill="#f0e3d2"/><path d="m390 114 12 6v54l-12-6Z" fill="#d8bc99"/><path d="m402 120 59-25v54l-59 25Z" fill="#e8d7c1"/>
+  </g>
+  <g stroke="#9ab2b7" stroke-width="1.2"><path d="M370 126v-32h30m104 1h25v32m-159 98v31h30m104 0h25v-31"/></g>
+  <g font-family="Arial, sans-serif" text-anchor="middle"><text x="130" y="322" fill="#43636a" font-size="13">Separate parts</text><text x="292" y="231" fill="#43636a" font-size="11">View-aligned</text><text x="292" y="247" fill="#43636a" font-size="11">guidance</text><text x="449" y="322" fill="#43636a" font-size="13">Aligned assembly</text></g>
+</svg>
